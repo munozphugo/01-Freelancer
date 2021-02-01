@@ -1,0 +1,257 @@
+:root {
+  --blanco: #fff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+}
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+  font-size: 62.5%;
+  scroll-snap-type: y mandatory;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Krub', sans-serif;
+  background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.sombra {
+  background: var(--blanco);
+  padding: 2rem;
+  -webkit-box-shadow: 0rem .5rem 1.5rem 0rem rgba(112, 112, 112, 0.48);
+  -moz-box-shadow: 0rem .5rem 1.5rem 0rem rgba(112, 112, 112, 0.48);
+  box-shadow: 0rem .5rem 1.5rem 0rem rgba(112, 112, 112, 0.48);
+}
+
+@media (min-width: 1200px){
+  .sombra {
+    border-radius: 1rem;
+  }
+}
+
+.boton {
+  background: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: .5rem;
+  width: 90%;
+  max-width: 30rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.header h1 span {
+  font-size: 2rem;
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: auto;
+}
+
+.nav-bg {
+  background: var(--secundario);
+}
+
+.navegacion {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (min-width: 480px){
+  .navegacion {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.navegacion a {
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: 700;
+  transition: all .3s ease;
+}
+
+.navegacion a:hover {
+  background: var(--primario);
+  color: var(--oscuro);
+}
+
+.hero {
+  background-image: url('../img/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  position: relative;
+  height: 45rem;
+  margin-bottom: 2rem;
+}
+
+.contenido-hero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  background: rgb(0 0 0 / 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+
+.servicios, .navegacion, .formulario, .footer {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+@media (min-width: 768px){
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+
+    /*grid: 20rem 80rem / 30rem 30rem;*/
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+}
+
+.servicio p {
+  line-height: 2;
+  text-align: center;
+}
+
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.formulario {
+  background: var(--gris);
+  width: min(60rem, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario legend {
+  display: block;
+  color: var(--primario);
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px){
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;
+  }
+
+  .campo:nth-child(3) {
+    grid-column: 1 / 3;
+  }
+
+  .campo:nth-child(4) {
+    grid-column: 1 / 3;
+  }
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  border: none;
+  outline: 0;
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: .2rem solid var(--secundario);
+}
+
+textarea {
+  max-width: 100%;
+  min-width: 100%;
+  height: 10rem;
+  min-height: 15rem;
+  max-height: 15rem;
+}
+
+.enviar .boton {
+  width: 100%;
+  max-width: 100%;
+}
+
+.footer {
+  text-align: center;
+}
